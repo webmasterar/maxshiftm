@@ -1,0 +1,88 @@
+Started MW_MaxShift edls mode with factor length: 8
+e: 0, i: 7, j: 43
+Completed MW_MaxShift edls mode in 929.830074310303 ms
+
+Started MW_MaxShift edls mode with factor length: 16
+e: 0, i: 15, j: 51
+Completed MW_MaxShift edls mode in 1035.70413589478 ms
+
+Started MW_MaxShift edls mode with factor length: 32
+e: 0, i: 31, j: 67
+Completed MW_MaxShift edls mode in 1140.71393013 ms
+
+Started MW_MaxShift edls mode with factor length: 64
+e: 0, i: 63, j: 99
+Completed MW_MaxShift edls mode in 1658.12993049622 ms
+
+Started MW_MaxShift edls mode with factor length: 128
+e: 0, i: 127, j: 163
+Completed MW_MaxShift edls mode in 2412.89281845093 ms
+
+Started MW_MaxShift edls mode with factor length: 256
+e: 0, i: 255, j: 291
+Completed MW_MaxShift edls mode in 3703.7889957428 ms
+
+Started MW_MaxShift edls mode with factor length: 512
+e: 0, i: 511, j: 547
+Completed MW_MaxShift edls mode in 6194.44417953491 ms
+
+Started MW_MaxShift edls mode with factor length: 768
+e: 0, i: 767, j: 803
+Completed MW_MaxShift edls mode in 8489.51315879822 ms
+
+Started MW_MaxShift edls mode with factor length: 1024
+e: 0, i: 1023, j: 1059
+Completed MW_MaxShift edls mode in 11657.4659347534 ms
+
+Started MW_MaxShift edls mode with factor length: 1280
+e: 0, i: 1279, j: 1315
+Completed MW_MaxShift edls mode in 13929.172039032 ms
+
+Started MW_MaxShift edls mode with factor length: 1536
+e: 0, i: 1535, j: 1571
+Completed MW_MaxShift edls mode in 15800.5809783936 ms
+
+Started MW_MaxShift hdls mode with factor length: 8
+e: 0, i: 7, j: 43
+Completed MW_MaxShift hdls mode in 265.212059020996 ms
+
+Started MW_MaxShift hdls mode with factor length: 16
+e: 0, i: 15, j: 51
+Completed MW_MaxShift hdls mode in 261.883974075317 ms
+
+Started MW_MaxShift hdls mode with factor length: 32
+e: 0, i: 31, j: 67
+Completed MW_MaxShift hdls mode in 266.745090484619 ms
+
+Started MW_MaxShift hdls mode with factor length: 64
+e: 0, i: 63, j: 99
+Completed MW_MaxShift hdls mode in 261.889934539795 ms
+
+Started MW_MaxShift hdls mode with factor length: 128
+e: 0, i: 127, j: 163
+Completed MW_MaxShift hdls mode in 348.959922790527 ms
+
+Started MW_MaxShift hdls mode with factor length: 256
+e: 0, i: 255, j: 291
+Completed MW_MaxShift hdls mode in 508.133172988892 ms
+
+Started MW_MaxShift hdls mode with factor length: 512
+e: 0, i: 511, j: 547
+Completed MW_MaxShift hdls mode in 759.61709022522 ms
+
+Started MW_MaxShift hdls mode with factor length: 768
+e: 0, i: 767, j: 803
+Completed MW_MaxShift hdls mode in 946.249961853027 ms
+
+Started MW_MaxShift hdls mode with factor length: 1024
+e: 0, i: 1023, j: 1059
+Completed MW_MaxShift hdls mode in 1044.30484771729 ms
+
+Started MW_MaxShift hdls mode with factor length: 1280
+e: 0, i: 1279, j: 1315
+Completed MW_MaxShift hdls mode in 1126.31893157959 ms
+
+Started MW_MaxShift hdls mode with factor length: 1536
+e: 0, i: 1535, j: 1571
+Completed MW_MaxShift hdls mode in 1228.59215736389 ms
+
