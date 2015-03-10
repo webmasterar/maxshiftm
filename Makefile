@@ -10,13 +10,14 @@ else
    endif
 endif
 
-all: mw_maxshift$(EXT)
+all: maxshiftm$(EXT)
 
-mw_maxshift$(EXT): mw_maxshift.o
-	gcc -o $(call FixPath,dist/mw_maxshift)$(EXT) mw_maxshift.c main.c -I.
+maxshiftm$(EXT): maxshiftm.o
+	gcc -o $(call FixPath,dist/maxshiftm)$(EXT) maxshiftm.c main.c -lm -I.
 
-mw_maxshift.o: main.c
+maxshiftm.o: main.c
 	gcc -c main.c
 
 clean:
-	$(RM) main.o mw_maxshift.o $(call FixPath,dist/mw_maxshift)$(EXT)
+	$(RM) main.o maxshiftm.o $(call FixPath,dist/maxshiftm)$(EXT)
+

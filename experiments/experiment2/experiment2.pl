@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# MW-MaxShift
+# MaxShiftM
 # Copyright (C) 2015 Solon Pissis and Ahmad Retha
 # 
 # This program is free software: you can redistribute it and/or modify
@@ -21,12 +21,12 @@ use warnings;
 use Time::HiRes qw(time);
 use Text::Levenshtein qw(distance);
 
-#MW-MaxShift
+#MaxShiftM
 my $exePath = "../../dist/";
-my $exe = "mw_maxshift";
+my $exe = "maxshiftm";
 
-#modes - edit distance and hamming distance
-my @modes = ("ed", "hd");
+#modes - hamming distance
+my @modes = ("hd");
 
 #percent dissimilarity between read and target sequence
 my @diss = (10, 20, 30, 40);
@@ -134,3 +134,4 @@ for my $mode (@modes) {
 }
 
 1;
+

@@ -1,5 +1,5 @@
 /*
- * MW-MaxShift
+ * MaxShiftM
  * Copyright (C) 2015 Solon Pissis and Ahmad Retha
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -23,8 +23,8 @@
 
 int main ( int argc, char** argv ) {
 
-    unsigned char* info = "The valid options for MW-MaxShift are:\n"
-                          "-m\tRequired. The mode (ed, edls, hd, hdls)\n"
+    unsigned char* info = "The valid options for MaxShiftM are:\n"
+                          "-m\tRequired. The mode (hd, hdls)\n"
                           "-t\tRequired. The text to search through\n"
                           "-f\tOptional. File for -t if -t won't do\n"
                           "-p\tRequired. The pattern you are searching for\n"
@@ -110,17 +110,13 @@ int main ( int argc, char** argv ) {
         return ( EXIT_FAILURE );
     }
     
-    //stores the error/edit-distance score and coordinates of the best match
+    //stores the error-distance score and coordinates of the best match
     unsigned int ii = 0, jj = 0, ee = 0;
     
     if ( strcmp ( mode, "hd" ) == 0 ) {
-        mw_maxshift_hd ( p, m, t, n, h, &ii, &jj, &ee);
+        maxshiftm_hd ( p, m, t, n, h, &ii, &jj, &ee);
     } else if ( strcmp ( mode, "hdls" ) == 0 ) {
-        mw_maxshift_hd_ls ( p, m, t, n, h, &ii, &jj, &ee);
-    } else if ( strcmp( mode, "ed" ) == 0 ) {
-        mw_maxshift_ed ( p, m, t, n, h, &ii, &jj, &ee );
-    } else if ( strcmp ( mode, "edls" ) == 0 ) {
-        mw_maxshift_ed_ls ( p, m, t, n, h, &ii, &jj, &ee );
+        maxshiftm_hd_ls ( p, m, t, n, h, &ii, &jj, &ee);
     } else {
         fprintf( stderr, "Invalid mode '%s' supplied!\n", mode );
         printf ( "%s", info );
@@ -131,3 +127,4 @@ int main ( int argc, char** argv ) {
 
     return (EXIT_SUCCESS);
 }
+

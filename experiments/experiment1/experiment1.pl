@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# MW-MaxShift
+# MaxShiftM
 # Copyright (C) 2015 Solon Pissis and Ahmad Retha
 # 
 # This program is free software: you can redistribute it and/or modify
@@ -21,7 +21,7 @@ use warnings;
 use Time::HiRes qw(time);
 
 my $exePath = "../../dist/";
-my $exe = "mw_maxshift";
+my $exe = "maxshiftm";
 
 #2000 chars
 my $t = <<'SEQ';
@@ -76,22 +76,23 @@ my $p = substr($t, 36, 1536);
 my @hlens = (8, 16, 32, 64, 128, 256, 512, 768, 1024, 1280, 1536);
 
 #modes
-my @modes = ("edls", "hdls"); #"ed", "hd"
+my @modes = ("hdls"); #"hd"
 
 #repeats if desired
 my $repeats = 1;
 
 for my $mode (@modes) {
     for my $h (@hlens) {
-        print "Started MW_MaxShift $mode mode with factor length: $h\n";
+        print "Started MaxShiftM $mode mode with factor length: $h\n";
         my $cmd = "$exePath$exe -m $mode -t $t -p $p -h $h";
         my $start = time();
         for (my $i = 0; $i < $repeats; $i++) {
             system($cmd);
         }
         my $finish = (time() - $start) * 1000;
-        print "Completed MW_MaxShift $mode mode in $finish ms\n\n";
+        print "Completed MaxShiftM $mode mode in $finish ms\n\n";
     }
 }
 
 1;
+
