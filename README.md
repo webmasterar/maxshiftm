@@ -4,7 +4,7 @@ MaxShiftM: An implementation of the MaxShift algorithm that supports long factor
 
 When publishing work that is based on the results from MaxshiftM please cite:
 
-*Solon P. Pissis and Ahmad Retha, "Generalised Implementation for Fixed-Length Approximate String Matching under Hamming Distance & Applications", 2015 (submitted)*
+*Solon P. Pissis and Ahmad Retha, "Generalised Implementation for Fixed-Length Approximate String Matching under Hamming Distance & Applications", in Proceedings of the 2015 IEEE 29th International Symposium on Parallel and Distributed Processing Workshops and PhD Forum, IEEE Computer Society.
 
 ## Installation and Running
 
