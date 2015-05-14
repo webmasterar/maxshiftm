@@ -49,8 +49,6 @@ Limit init_limit ( unsigned int h, struct Limit lim );
 unsigned int popcount_words ( WORD * words, int length );
 WORD * shift_words ( WORD * words, int length );
 WORD * shiftc_words ( WORD * words, struct Limit lim );
-WORD * bitminmax_words ( WORD * a, WORD * b, WORD * c, unsigned int length );
-WORD * bitminmax_numerical_words ( WORD * a, WORD * b , unsigned int length );
 WORD delta ( char a, char b );
 void displayMatrix ( WORD *** M, unsigned int m, unsigned int n, unsigned int o );
 unsigned int maxshiftm_hd ( unsigned char * p, unsigned int m, unsigned  char * t, unsigned int n, unsigned int h, unsigned int * ii, unsigned int * jj, unsigned int * dd );
