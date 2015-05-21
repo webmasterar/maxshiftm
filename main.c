@@ -29,7 +29,7 @@ int main ( int argc, char** argv ) {
                           "-f\tOptional. File for -t if -t won't do\n"
                           "-p\tRequired. The pattern you are searching for\n"
                           "-l\tOptional. File for -p if -p won't do\n"
-                          "-h\tOptional. Length of factor, e.g. 9\n";
+                          "-h\tRequired. Length of factor, e.g. 9\n";
     unsigned char * mode = "";
     unsigned char * t = "";
     unsigned char * p = "";
