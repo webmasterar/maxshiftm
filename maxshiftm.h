@@ -1,6 +1,6 @@
 /*
  * MaxShiftM
- * Copyright (C) 2015 Solon Pissis and Ahmad Retha
+ * Copyright (C) 2016 Solon Pissis and Ahmad Retha
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,41 +16,70 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * Define WORD - uses all bits available in a computer word
- */
-typedef unsigned long int WORD;
+#ifndef __MAXSHIFTM__
+#define __MAXSHIFTM__
 
-/**
- * WORD size
- */
-#define BYTE_SIZE 8
-#define WORD_SIZE sizeof ( WORD ) * BYTE_SIZE
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#include <stdio.h>
+#include <limits.h>
 
-/**
- * A structure to hold number of WORDs and bits needed to store m. Also contains
- * yWord mask to be used to clear the left-most bits on the most significant
- * WORD in the errors array
- */
-typedef struct Limit
+using namespace std;
+
+namespace maxshiftm
 {
-    unsigned int words;
-    unsigned int h;
-    unsigned int yIndex;
-    WORD yWord;
-} Limit;
+    /**
+     * Define WORD - uses all bits available in a computer word
+     */
+    typedef unsigned long int WORD;
 
-/**
- * Function definitions
- */
-#define max(a,b) ((a) > (b)) ? (a) : (b)
-#define min(a,b) ((a) < (b)) ? (a) : (b)
-Limit init_limit ( unsigned int h, struct Limit lim );
-unsigned int popcount_words ( WORD * words, int length );
-WORD * shift_words ( WORD * words, int length );
-WORD * shiftc_words ( WORD * words, struct Limit lim );
-WORD delta ( char a, char b );
-void displayMatrix ( WORD *** M, unsigned int m, unsigned int n, unsigned int o );
-unsigned int maxshiftm_hd ( unsigned char * p, unsigned int m, unsigned  char * t, unsigned int n, unsigned int h, unsigned int * ii, unsigned int * jj, unsigned int * dd );
-unsigned int maxshiftm_hd_ls ( unsigned char * p, unsigned int m, unsigned  char * t, unsigned int n, unsigned int h, unsigned int * ii, unsigned int * jj, unsigned int * dd );
+    /**
+     * WORD size and inline delta function
+     */
+    #define BYTE_SIZE 8
+    #define WORD_SIZE sizeof ( WORD ) * BYTE_SIZE
+    #define delta(a,b) ( ( WORD ) ((a) != (b)) )
 
+    /**
+     * A structure to hold number of WORDs and bits needed to store m. Also contains
+     * yWord mask to be used to clear the left-most bits on the most significant
+     * WORD in the errors array
+     */
+    struct Limit
+    {
+	unsigned int h;
+	unsigned int words;
+	WORD yWord;
+    };
+
+    /**
+     * The MaxShiftM class
+     */
+    class MaxShiftM
+    {
+	private:
+	    unsigned char * p;
+	    unsigned int m;
+	    unsigned char * t;
+	    unsigned int n;
+	    unsigned int k;
+	    void init_limit ( unsigned int factor_length );
+
+	protected:
+	    struct Limit lim;
+	    unsigned int popcount_words ( WORD * words );
+	    void shift_words ( WORD * words );
+	    void shiftc_words ( WORD * words );
+	    void displayMatrix ( WORD *** M );
+
+	public:
+	    MaxShiftM ( unsigned char * p, unsigned int m, unsigned char * t, unsigned int n, unsigned int h );
+	    ~MaxShiftM ();
+	    unsigned int maxshiftm_hd ( unsigned int * ii, unsigned int * jj, unsigned int * dd );
+	    unsigned int maxshiftm_hd_ls ( unsigned int * ii, unsigned int * jj, unsigned int * dd );
+    };
+
+}
+
+#endif

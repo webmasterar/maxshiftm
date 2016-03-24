@@ -1,23 +1,35 @@
-ifdef SystemRoot
-   RM = del /Q
-   FixPath = $(subst /,\,$1)
-   EXT = .exe
-else
-   ifeq ($(shell uname), Linux)
-      RM = rm -f
-      FixPath = $1
-      EXT = 
-   endif
-endif
+MF=     Makefile
 
-all: maxshiftm$(EXT)
+CC=     g++
 
-maxshiftm$(EXT): maxshiftm.o
-	gcc -o $(call FixPath,dist/maxshiftm)$(EXT) maxshiftm.c main.c -lm -I.
+CFLAGS= -g -D_USE_64 -msse3 -O3 -fomit-frame-pointer -funroll-loops
 
-maxshiftm.o: main.c
-	gcc -c main.c
+LFLAGS= -std=c++11 -DNDEBUG -I .
 
-clean:
-	$(RM) main.o maxshiftm.o $(call FixPath,dist/maxshiftm)$(EXT)
+EXE=    maxshiftm
 
+SRC=    main.cpp MaxShiftM.cpp
+
+OBJ=    main.o
+
+HD=     Makefile
+
+#
+# No need to edit below this line 
+#
+
+.SUFFIXES: 
+.SUFFIXES: .cpp .o
+
+.cpp.o: 
+	$(CC) $(CFLAGS) -c $(LFLAGS) $< 
+
+all:    $(EXE) 
+
+$(EXE): $(OBJ)
+	$(CC) $(CFLAGS) $(LFLAGS) $(SRC) -o $@
+
+$(OBJ): $(HD) 
+
+clean: 
+	rm -f $(OBJ) $(EXE) *~
