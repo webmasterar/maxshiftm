@@ -10,9 +10,9 @@ EXE=    maxshiftm
 
 SRC=    main.cpp MaxShiftM.cpp
 
-OBJ=    main.o
+OBJ=    main.o MaxShiftM.o
 
-HD=     Makefile
+HD=     maxshiftm.h Makefile
 
 #
 # No need to edit below this line 

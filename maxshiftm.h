@@ -59,15 +59,15 @@ namespace maxshiftm
     class MaxShiftM
     {
 	private:
+	    void init_limit ( unsigned int factor_length );
+
+	protected:
+	    struct Limit lim;
 	    unsigned char * p;
 	    unsigned int m;
 	    unsigned char * t;
 	    unsigned int n;
 	    unsigned int k;
-	    void init_limit ( unsigned int factor_length );
-
-	protected:
-	    struct Limit lim;
 	    unsigned int popcount_words ( WORD * words );
 	    void shift_words ( WORD * words );
 	    void shiftc_words ( WORD * words );
