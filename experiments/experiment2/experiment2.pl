@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#/usr/bin/perl
 
 # MaxShiftM
 # Copyright (C) 2015 Solon Pissis and Ahmad Retha
@@ -22,7 +22,7 @@ use Time::HiRes qw(time);
 use Text::Levenshtein qw(distance);
 
 #MaxShiftM
-my $exePath = "../../dist/";
+my $exePath = "../../";
 my $exe = "maxshiftm";
 
 #modes - hamming distance

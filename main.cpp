@@ -113,7 +113,7 @@ int main ( int argc, char** argv )
 	printf ( "%s", info );
 	return ( EXIT_SUCCESS );
     }
-    else if ( a < 4 )
+    else if ( a != 4 )
     {
 	fprintf( stderr, "Invalid number of options supplied!\n", argv[i][1] );
 	printf ( "%s", info );

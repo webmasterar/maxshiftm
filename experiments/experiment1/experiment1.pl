@@ -20,7 +20,7 @@ use strict;
 use warnings;
 use Time::HiRes qw(time);
 
-my $exePath = "../../dist/";
+my $exePath = "../../";
 my $exe = "maxshiftm";
 
 #2000 chars
