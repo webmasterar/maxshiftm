@@ -67,7 +67,6 @@ namespace maxshiftm
 	    unsigned int m;
 	    unsigned char * t;
 	    unsigned int n;
-	    unsigned int k;
 	    unsigned int popcount_words ( WORD * words );
 	    void shift_words ( WORD * words );
 	    void shiftc_words ( WORD * words );
