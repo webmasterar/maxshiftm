@@ -45,9 +45,12 @@ MaxShiftM::~MaxShiftM ()
 
 void MaxShiftM::init_limit ( unsigned int factor_length )
 {
+    unsigned int WSi = (unsigned int) WORD_SIZE;
+    double WSd = (double) WORD_SIZE;
+    
     this->lim.h = factor_length;
-    this->lim.words = (unsigned int) ceil ( (double) this->lim.h / (double) WORD_SIZE );
-    this->lim.yWord = ULONG_MAX >> ( ( WORD_SIZE - ( this->lim.h % WORD_SIZE ) ) % WORD_SIZE );
+    this->lim.yWord = ULONG_MAX >> ( WSi - ( this->lim.h % WSi ) ) % WSi;    
+    this->lim.words = (unsigned int) ceil ( this->lim.h / WSd );
 }
 
 
